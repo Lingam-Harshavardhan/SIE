@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--Header & Nav-->
+    <header>
+        <div class="logo"><img src="/Project/images/logo.png" alt="Logo" class="logo-img"></div>
+        <div class="menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div> 
+        </div>
+        <nav class="nav-bar">    
+        <ul>
+            <li><a href="#" class="item">Intro</a></li>
+            <li><a href="#">Objectives</a></li>
+            <li><a href="#">Startup Eco-System</a></li>
+            <li><a href="#">Infrastructure &amp; Facilities</a></li>
+            <li><a href="#">Events</a></li>  
+        </ul>
+        </nav>
+    
+    </header>
+    <script>
+        menu = document.querySelector(".menu");
+        navBar = document.querySelector(".nav-bar");
+        menu.onclick = function(){
+        navBar.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

@@ -2,20 +2,88 @@
   margin:0;
   padding: 0;
   box-sizing: border-box; 
-   
+  
 }
+/*nav bar and scroll effect*/
 .nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    
-}
-.back{
-  background-image: url(../images/hero-backgroung.jpg) ;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  position:fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height:100vh;
+  padding: 1rem 1.5rem;
+  z-index: 100000;
+}
+.nav.scrolled {
+  padding: 0rem 0.5rem;
+  background-color:  rgb(9, 9, 82,0.2);
+}
+
+/*header Background*/
+header{
+    width:100%;
+    height: 100vh;
+    background: url(../images/hero-backgroung.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    z-index: -1;
+}
+/*logo and Scroll effect*/
+.logo{
+  width:18vh;
+}
+.logo.scrolled{
+  width:12vh;
+  transition: 1s;
+}
+/*Menu Items*/
+#menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu li{
+  list-style: none;
+  padding-right: 30px;
+}
+#menu li a{
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color:black;
+}
+
+#menu li a:hover{
+  color: #cd563b;
+}
+/*Quote*/
+.mid{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.mid h2{
+  color: rgb(9, 9, 82);
+  font-size: 3rem;
+}
+/*Transition animation classes*/
+section{
+  display:grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+.hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transform:translateX(-100%);
+  transition: all 2s;
+}
+.show{
+  opacity:1;
+  filter: blur(0);
+  transform:translateX(0);
 }
