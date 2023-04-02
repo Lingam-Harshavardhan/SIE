@@ -50,6 +50,7 @@ header{
 #menu li a{
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 900;
   text-transform: uppercase;
   color:black;
 }
