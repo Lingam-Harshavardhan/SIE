@@ -1,0 +1,125 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  
+  /* Navbar style */
+  .navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.2); /* Use a transparent background for a glass effect */
+    backdrop-filter: blur(10px); /* Add a blur effect to the background */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+  }
+  
+  /* Navbar logo style */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    color: #fff; /* Set the logo and website name color */
+  }
+  
+  /* Logo image style */
+  .navbar-logo img {
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  /* Navbar menu style */
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Navbar menu list style */
+  .navbar-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  /* Navbar menu item style */
+  .navbar-menu li {
+    margin: 0 10px;
+  }
+  
+  /* Navbar menu link style */
+  .navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Navbar menu link hover style */
+  .navbar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Use a transparent background for a glass effect */
+    color: #333; /* Set the link color on hover */
+  }
+  
+  /* Navbar toggle button style */
+  .navbar-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  /* Media query for mobile view */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  
+    /* Add the class "is-active" to the menu items when the toggle button is clicked */
+    .navbar-menu.is-active {
+      display: flex !important;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 10px;
+    }
+  
+    /* Stack the menu items vertically */
+    .navbar-menu.is-active ul {
+      flex-direction: column;
+    }
+  
+    /* Add margin between each menu item */
+    .navbar-menu.is-active li {
+      margin: 5px 0;
+    }
+  
+    /* Set the color of the toggle button icon */
+    .navbar-toggle:before {
+      content: "\f0c9";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: #fff;
+    }
+  
+    /* Set the color of the toggle button icon on hover */
+    .navbar-toggle:hover:before {
+      color: #333;
+    }
+  }
+  

@@ -55,7 +55,7 @@ header{
   text-transform: uppercase;
   color:black;
 }
-
+/*Menu item*/
 #menu li a:hover{
   color: #cd563b;
 }

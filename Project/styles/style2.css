@@ -1,213 +1,97 @@
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    list-style: none;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-decoration:none;
-  }
-  body{
-    background: #fefefe;
-  }
-  header{
-    width: 100%;
-    height:120px;
-    background:#11101b;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 100px;
-  
-  }
-  .logo-img{
-    width:10vh;
-  }
-  .logo{
-    font-size: 28px;
-    font-weight: bolder;
-    color:#fefefe;
-    
-  }
-  .menu{
-   display: none; 
-  }
-  .nav-bar ul{
-    display:flex;
-  }
-  .nav-bar ul li a{
-    display:block;
-    color:#fefefe;
-    font-size: 20px;
-    padding: 10px 25px;
-    border-radius: 50px;
-    transition: 0.4s;
-    margin: 0 5px;
-  }
-  .nav-bar ul li a:hover{
-    color:#11101b;
-    background: #fefefe;
-  }
-  .nav-bar ul li a.active{
-     color:#11101b;
-    background: #fefefe;
-  }
-  @media only screen and (max-width:1320px){
-    header{
-        padding: 0 50px;
-    }
-  }
-  @media only screen and (max-width:1100px){
-    header{
-        padding: 0 30px;
-    }
-  
-  }
-  @media only screen and (max-width:900px){
-    .menu{
-       display:block;
-       cursor: pointer; 
-    }
-    .menu .line{
-        width:30px;
-        height:3px;
-        background:#fefefe;
-        margin:6px 0;
-    }
-    .nav-bar{
-        height:0;
-        position:absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        width: 123vh;
-        background: #11101b;
-        transition:0.4s;
-        overflow: hidden;
-    }
-    .nav-bar.active{
-        height: 300px;
-       
-    }
-    .nav-bar ul{
-        display:block;
-        width: fit-content;
-        margin: 80px auto 0 auto;
-        text-align:center;
-        transition:0.8s;
-        opacity: 0;
-    }
-    .nav-bar.active ul{
-        opacity:1;
-    }
-  
-  }
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+}
+
+/* Nav-bar */
+nav{
+  background-color: rgba(2,2,2,0.2);
+  padding: 5px 20px;
+  display:flex;
+  align-items: center;
+}
+nav li a{
+  color:black;
+}
+ .menu{
+  display:flex;
+  align-items: center;
+  list-style: none;
+ }
+ .menu li{
+  padding: 15px 10px;
+  font-size: 16px;
+ }
+
+ /* Menu item hover effect */
+
+ nav .menu li a {
+  position: relative;
+}
+nav .menu li a:after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ff3c78; /* set your desired color here */
+  transition: width 1s ease-in-out; /* add a transition for smooth effect */
+}
+nav .menu li a:hover:after {
+  width: 100%; 
+}
+nav ul.menu li a:hover {
+  font-weight: bold;
+}
+
+/* Logo styling */
+.logo img{
+  width:80px;
+  margin: 10px 0 0 10px ;
+}
+.logo{
+  flex: 1;
+}
+.logo a{
+  display: flex;
+  align-items:center;
+  font-size: 20px;
+}
+a:visited{
+  color:black;
+}
 
 
+/* Toggle menu */
+.toggle{
+  font-size: 30px;
+  display:none;
+}
 
-
-  *{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box; 
-    
-  }
-  
-  header{
-    width:100%;
-    height: 100vh;
-    background: url(../images/hero-backgroung.jpg) no-repeat 50% 50%;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  .logo-img{
-    width:18vh;
-  }
-  .menu{
-    display: none; 
-   }
-   .nav-bar ul{
-     display:flex;
-   }
+@media screen and (max-width: 786px)  {
+  /* Nav Bar */
   nav{
-    margin-top: 40px;
-    position: fixed;
-    width:100%;
+    display:block;
+    position: relative;
+    padding: 15px 20px;
+  }
+  .menu{
+    margin-top:15px;
+    display:none;
+  }
+  .menu.active, .toggle{
+    display:block;
+  }
+  .toggle{
+    position: absolute;
+    top:45px;
+    right:20px;
   }
   
-  .nav ul{
-     display:flex;
-  }
-  nav ul {
-    list-style:none;
-    background-color: rgba(0,0,0,0);
-    overflow:hidden;
-    padding:0;
-    text-align: center;
-    margin: 0;
-    transition: 2s;
-  }
-  nav.blank ul{
-    background-color: #000;
-  }
-  nav ul li{
-    display: inline;
-    padding: 20px;
-  }
-  nav ul li a{
-    text-decoration: none;
-    color:black;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  @media only screen and (max-width:1320px){
-    header{
-        padding: 0 50px;
-    }
-  }
-  @media only screen and (max-width:1100px){
-    header{
-        padding: 0 30px;
-    }
-  
-  }
-  @media only screen and (max-width:900px){
-    .menu{
-       display:block;
-       cursor: pointer; 
-    }
-    .menu .line{
-        width:30px;
-        height:3px;
-        background:#fefefe;
-        margin:6px 0;
-    }
-    .nav-bar{
-        height:0;
-        position:absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        width: 123vh;
-        background: #11101b;
-        transition:0.4s;
-        overflow: hidden;
-    }
-    .nav-bar.active{
-        height: 300px;
-       
-    }
-    .nav-bar ul{
-        display:block;
-        width: fit-content;
-        margin: 80px auto 0 auto;
-        text-align:center;
-        transition:0.8s;
-        opacity: 0;
-    }
-    .nav-bar.active ul{
-        opacity:1;
-    }
-  
-  }
-  
+}

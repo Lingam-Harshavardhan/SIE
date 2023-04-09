@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIE</title>
+  <link rel="stylesheet" href="styles/style2.css">
+  <script src="js/app2.js"></script>
 </head>
 <body>
-    <!--Header & Nav-->
-    <header>
-        <div class="logo"><img src="/Project/images/logo.png" alt="Logo" class="logo-img"></div>
-        <div class="menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div> 
-        </div>
-        <nav class="nav-bar">    
-        <ul>
-            <li><a href="#" class="item">Intro</a></li>
-            <li><a href="#">Objectives</a></li>
-            <li><a href="#">Startup Eco-System</a></li>
-            <li><a href="#">Infrastructure &amp; Facilities</a></li>
-            <li><a href="#">Events</a></li>  
+  <!-- Nav-Bar -->
+    <nav>
+      <div class="logo">
+         <a href="#"><img src="images/logo.png" alt="logo">SIE</a>
+      </div>
+      <div class="toggle">
+          <a href="#"><ion-icon name="menu"></ion-icon></a>
+      </div>
+        <ul class="menu">
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#Incubator">Incubator</a></li>
+          <li><a href="#Startup">Startup</a></li>
+          <li><a href="#Infrastrusture_&amp;_Facilities">Infrastrusture_&amp;_Facilities</a></li>
+          <li><a href="#Events">Events</a></li>
         </ul>
-        </nav>
-    
-    </header>
+    </nav>
+
+    <!-- Script for nav bar icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Script for Toggle menu -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
-        menu = document.querySelector(".menu");
-        navBar = document.querySelector(".nav-bar");
-        menu.onclick = function(){
-        navBar.classList.toggle("active");
-        }
+      $(function(){
+        $(".toggle").on("click", function(){
+          if($(".menu").hasClass("active")){
+            $(".menu").removeClass("active")
+            $(this).find("a").html("<ion-icon name='menu'></ion-icon>");
+          }else{
+            $(".menu").addClass("active");
+            $(this).find("a").html("<ion-icon name='close'></ion-icon>");
+          }
+        });
+      });
     </script>
 </body>
 </html>
