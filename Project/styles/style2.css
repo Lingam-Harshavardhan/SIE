@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
   text-decoration: none;
 }
 
@@ -35,7 +36,7 @@ nav li a{
 nav .menu li a {
   position: relative;
 }
-nav .menu > li > a:hover:after {
+nav .menu > li > a:after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -43,9 +44,9 @@ nav .menu > li > a:hover:after {
   height: 2px;
   width: 0;
   background-color: #ff3c78; /* set your desired color here */
-  transition: width 1s ease-in-out; /* add a transition for smooth effect */
+  transition: width 2s ease; /* add a transition for smooth effect */
 }
-nav .menu li a:hover:after {
+nav .menu > li > a:hover:after {
   width: 100%; 
 }
 nav ul.menu li a:hover {
