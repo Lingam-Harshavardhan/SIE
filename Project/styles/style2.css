@@ -14,26 +14,28 @@ nav{
   padding: 5px 20px;
   display:flex;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 nav li a{
   color:black;
 }
- .menu{
+.menu{
   display:flex;
   align-items: center;
   list-style: none;
- }
- .menu li{
+}
+.menu li{
   padding: 15px 10px;
   font-size: 16px;
- }
+}
 
- /* Menu item hover effect */
-
- nav .menu li a {
+/* Menu item hover effect */
+nav .menu li a {
   position: relative;
 }
-nav .menu li a:after {
+nav .menu > li > a:hover:after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -63,23 +65,37 @@ nav ul.menu li a:hover {
   align-items:center;
   font-size: 20px;
 }
-a:visited{
-  color:black;
+.logo a:visited {
+  color: black;
 }
-
 
 /* Toggle menu */
 .toggle{
   font-size: 30px;
   display:none;
 }
+.toggle a:visited {
+  color: black;
+}
+
+/* Scrolled effect */
+.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 @media screen and (max-width: 786px)  {
   /* Nav Bar */
   nav{
     display:block;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
     padding: 15px 20px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
   .menu{
     margin-top:15px;
