@@ -34,7 +34,7 @@ nav li a{
  nav .menu li a {
   position: relative;
 }
-nav .menu > li > a:after {
+nav .menu > li > a:hover:after {
   content: '';
   position: absolute;
   bottom: -4px;
