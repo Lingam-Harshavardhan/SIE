@@ -1,34 +1,26 @@
+
+
+// Script for navbar toggle
 const navbarToggle = document.querySelector('.navbar-toggle');
-	const navbarMenu = document.querySelector('.navbar-menu');
-    navbarToggle.addEventListener('click', () => {
-	navbarMenu.classList.toggle('is-active');
-});
-window.addEventListener("scroll", function() {
-    var navbar = document.querySelector(".navbar");
-    navbar.classList.toggle("scrolled", window.scrollY > 0);
-    var menu = document.querySelector(".navbar-menu");
-    menu.classList.toggle("scrolled", window.scrollY > 0);
-    var logo = document.querySelector(".navbar-logo");
-    logo.classList.toggle("scrolled", window.scrollY > 0); 
-    var toggle = document.querySelector(".navbar-toggle");
-    toggle.classList.toggle("scrolled", window.scrollY > 0);
-    var link = document.querySelector(a);
-    link.classList.toggle("scrolled", window.scrollY > 0);  
+const navbarMenu = document.querySelector('.navbar-menu');
+navbarToggle.addEventListener('click', () => {
+    navbarMenu.classList.toggle('is-active');
 });
 
 
-$(function(){
-    $(".toggle").on("click", function(){
-      if($(".menu").hasClass("active")){
-        $(".menu").removeClass("active")
-        $(this).find("a").html("<ion-icon name='menu'></ion-icon>");
-      }else{
-        $(".menu").addClass("active");
-        $(this).find("a").html("<ion-icon name='close'></ion-icon>");
-      }
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+    console.log(entry)
+    if(entry.isIntersecting){
+        entry.target.classList.add('show');
+    }else{
+        entry.target.classList.remove('show');
+    }
+    
     });
-  });
-
-
- 
+    });
+    
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
 
