@@ -15,3 +15,20 @@ window.addEventListener("scroll", function() {
     var link = document.querySelector(a);
     link.classList.toggle("scrolled", window.scrollY > 0);  
 });
+
+
+$(function(){
+    $(".toggle").on("click", function(){
+      if($(".menu").hasClass("active")){
+        $(".menu").removeClass("active")
+        $(this).find("a").html("<ion-icon name='menu'></ion-icon>");
+      }else{
+        $(".menu").addClass("active");
+        $(this).find("a").html("<ion-icon name='close'></ion-icon>");
+      }
+    });
+  });
+
+
+ 
+

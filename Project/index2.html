@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIE</title>
   <link rel="stylesheet" href="styles/style2.css">
-  <script src="js/app2.js"></script>
+  
 </head>
 <body>
   <!-- Nav-Bar -->
@@ -18,14 +18,49 @@
           <a href="#"><ion-icon name="menu"></ion-icon></a>
       </div>
         <ul class="menu">
-          <li><a href="#Home">Home</a></li>
+          <li><a href="#Intro">Home</a></li>
           <li><a href="#Incubator">Incubator</a></li>
           <li><a href="#Startup">Startup</a></li>
-          <li><a href="#Infrastrusture_&amp;_Facilities">Infrastrusture_&amp;_Facilities</a></li>
+          <li><a href="#Infrastructure_and_Facilities">Infrastrusture &amp; Facilities</a></li>
           <li><a href="#Events">Events</a></li>
         </ul>
     </nav>
+    <!-- Hero Section -->
 
+    <!-- Image Slider -->
+    
+    
+    <div class="container">
+      <div class="slides fade">
+        
+        <img src="images/clg1.jpg" alt="image" >
+      </div>
+      <div class="slides fade">
+        
+        <img src="images/clg2.jpg" alt="image">
+      </div>
+      <div class="slides fade">
+     
+        <img src="images/clg3.jpg" alt="image">
+      </div>
+      <div class="slides fade">
+        
+        <img src="images/lab1.jpg" alt="image" >
+      </div>
+      <div class="slides fade">
+        <img src="images/lab2.jpg" alt="image" >
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+      <a class="next" onclick="plusSlides(1)">&#10095</a>
+      <div class="dots">
+        <span class="dot" onclick="currentSlides(1)"></span>
+        <span class="dot" onclick="currentSlides(2)"></span>
+        <span class="dot" onclick="currentSlides(3)"></span>
+        <span class="dot" onclick="currentSlides(4)"></span>
+        <span class="dot" onclick="currentSlides(5)"></span>
+      </div>
+      
+    </div>
 
     <section class="hidden" id="Intro">
       <h3>SVCET Incubator-An Intro</h3>
@@ -51,7 +86,7 @@ To promote diversity and inclusion by supporting startups from a wide range of b
 Overall, the incubation center aims to support startups in realizing their full potential and to contribute to the growth and development of the startup ecosystem.</p>
 
   </section>
-  <section class="hidden" id="Startup_Eco-system">
+  <section class="hidden" id="Startup">
       <h3>The Startup Eco-system@SVCET</h3>
       <p>At our Incubator, we believe that creating a thriving startup ecosystem is essential to support the growth and success of our incubated startups. We aim to create a collaborative environment where startups, investors, mentors, and other stakeholders can come together to exchange ideas, share resources, and work towards a common goal.
 To build a strong startup ecosystem around our Incubation Center, we plan to:<br>
@@ -95,32 +130,98 @@ Some of the events and programs that we plan to conduct at our Incubation Center
 11.	Internship Programs: We plan to establish internship programs where students and recent graduates can gain hands-on experience working with startups in the incubation center. These programs will provide startups with access to talented and motivated interns, and students with an opportunity to develop practical skills and knowledge in entrepreneurship.<br>
 Overall, our events and programs are designed to promote entrepreneurship and innovation and to provide our startups with the resources, skills, and knowledge they need to succeed. We believe that by organizing these events and programs, we can create a vibrant and supportive startup ecosystem that fosters creativity, collaboration, and innovation.</p>
 
+    
+
     <!-- Script for nav bar icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Script for slider -->
+   
     <!-- Script for Toggle menu -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="js/app2.js"></script>
     <script>
-      $(function(){
-        $(".toggle").on("click", function(){
-          if($(".menu").hasClass("active")){
-            $(".menu").removeClass("active")
-            $(this).find("a").html("<ion-icon name='menu'></ion-icon>");
-          }else{
-            $(".menu").addClass("active");
-            $(this).find("a").html("<ion-icon name='close'></ion-icon>");
+       //Sticky scroll Effect
+        window.addEventListener('scroll', function() {
+          var nav = document.querySelector('nav');
+          if (window.scrollY > 0) {
+            nav.classList.add('scrolled');
+          } else {
+            nav.classList.remove('scrolled');
           }
         });
-      });
-      //Sticky scroll Effect
-      window.addEventListener('scroll', function() {
-        var nav = document.querySelector('nav');
-        if (window.scrollY > 0) {
-          nav.classList.add('scrolled');
-        } else {
-          nav.classList.remove('scrolled');
+
+       /* Script for slider */
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n){
+  showSlides(slideIndex += n);
+}
+
+function currentSlides(n){
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("dot");
+  if(n > slides.length){
+    slideIndex = 1;
+  }
+  if(n < 1){
+    slideIndex = slides.length;
+  }
+  for(i = 0; i < slides.length; i++){
+    slides[i].style.display = "none";
+  }
+  for(i = 0; i < dots.length; i++){
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+// Automatic slideshow
+var slideIndex = 0;
+showSlidesAuto();
+
+function showSlidesAuto() {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("dot");
+  for(i = 0; i < slides.length; i++){
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if(slideIndex > slides.length){
+    slideIndex = 1;
+  }
+  for(i = 0; i < dots.length; i++){
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlidesAuto, 3000); // Change image every 3 seconds
+}
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }else{
+            entry.target.classList.remove('show');
         }
-      });
-    </script>
+
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+</script>
+
+
 </body>
 </html>
