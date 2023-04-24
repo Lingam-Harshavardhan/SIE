@@ -263,13 +263,13 @@ h3{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding:50px 0;
-  gap: 40px 60px;
+  padding:25px 0;
+  gap: 30px 40px;
 }
 .drop-container .drop{
   position: relative;
-  width:400px;
-  height:400px;
+  width:340px;
+  height:340px;
   box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),25px 35px 20px rgba(0,0,0,0.05), 25px 30px 30px rgba(0,0,0,0.05), inset -20px -20px 25px rgba(255,255,255,0.9);    
   transition: 0.5s ease-in-out;
   display: flex;
@@ -292,10 +292,10 @@ h3{
 .drop-container .drop::before{
   content: "";
   position:absolute;
-  top: 50px;
-  left: 95px;
-  width:35px;
-  height: 35px;
+  top: 40px;
+  left: 90px;
+  width:30px;
+  height: 30px;
   background: #fff ;
   border-radius: 50%;
   opacity: 0.7;
@@ -303,10 +303,10 @@ h3{
 .drop-container .drop::after{
   content: "";
   position:absolute;
-  top: 90px;
-  left: 115px;
-  width:15px;
-  height: 15px;
+  top: 70px;
+  left: 108px;
+  width:12px;
+  height: 12px;
   background: #fff ;
   border-radius: 50%;
   opacity: 0.7;
@@ -325,7 +325,7 @@ h3{
   display:flex;
   justify-content: center;
   align-items: center;
-  font:2em;
+  font:1.5em;
   color: var(--clr)
 }
 
@@ -388,6 +388,10 @@ justify-content:flex-start;
 flex-basis: calc(25% - 20px); /* 4 cards in a row in desktop view */
 margin-bottom: 20px;
 }
+
+.event-container {
+  display:none;
+}
   
 @media screen and (max-width: 786px)  {
   /* Nav Bar */
@@ -424,14 +428,58 @@ margin-bottom: 20px;
     margin: 10px 0 0 10px ;
   }
 
+  .event-container {
+    /* Add styles for the container */
+    display:contents;
+  }
+  
+  .event-content-heading {
+    /* Add styles for the content heading */
+    /* For example, you can style it as a button or a link */
+    cursor: pointer;
+  }
+  .event-content-wrapper {
+    /* Add styles for the content wrapper */
+    /* For example, use flexbox or grid to align text and image side by side */
+    display: flex; /* or grid */
+    justify-content: space-around; /* Add this property to separate text and image */
+  }
+  .event-content-hidden {
+    /* Add styles for the hidden content */
+    /* For example, set display property to none to hide it by default */
+    display: none;
+  }
+  
+  .event-content-text {
+    /* Add styles for the content text */
+    min-width: 30Vh;
+    flex: 1; /* Add this property to allow text to take up remaining space */
+  }
+  .event-content-text span{
+    display:block;
+    opacity: 0;
+    animation: reveal 2s forwards var(--d);
+  }
+  @keyframes reveal {
+    from {transform: translate(40px);}
+    to { opacity: 1; transform: n;}
+  }
+  
+  .event-content-image {
+    /* Add styles for the content image */
+    padding-left:30px;
+  }
+
   /* Event cards */
   .card {
-    flex-basis: calc(50% - 20px); /* 2 cards in a row in mobile view */
+    display:none;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 787px){
   .card {
     flex-basis: calc(33.33% - 20px); /* 3 cards in a row in tablet view */
   }
 }
+
+

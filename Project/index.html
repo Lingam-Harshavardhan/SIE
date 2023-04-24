@@ -7,6 +7,78 @@
     <title>SIE</title>
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="js/app.js"></script>
+    <style>
+        .card{
+            width:320px;
+            height:500px;
+            border-radius: 20px;
+            overflow:hidden;
+            border: 8px solid white;
+            position: relative;
+        }
+        .card-image{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        
+        
+ .card-body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -100%; /* Update right property to 100% */
+  background: #1f3d4736;
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  color: aliceblue;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition:  1s; /* Update transition property to specify the property to be transitioned */
+}
+
+.card:hover .card-body {
+  right: 0; /* Update right property to 0 on hover */
+}
+
+        .card-title{
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight:500;
+        } 
+        .card-info{
+            font-size: 15px;
+            line-height: 25px;
+            margin: 40px 0;
+        }
+        .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+}
+
+.card {
+  flex-basis: calc(25% - 20px); /* 4 cards in a row in desktop view */
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    flex-basis: calc(33.33% - 20px); /* 3 cards in a row in tablet view */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-basis: calc(50% - 20px); /* 2 cards in a row in mobile view */
+  }
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -85,17 +157,86 @@ Overall, our Incubation Center provides a comprehensive suite of infrastructure 
         <h3>Events @ SVCET Incubator</h3>
         <p>At SVCET Incubator, we are committed to promoting entrepreneurship and innovation among our incubated startups. We believe that organizing events and programs is an effective way to foster a culture of entrepreneurship and to provide our startups with the skills and knowledge they need to succeed.
 Some of the events and programs that we plan to conduct at our Incubation Center, include: <br>
-1.	Entrepreneurship Bootcamps: We plan to conduct regular bootcamps that will provide startups with an immersive learning experience on entrepreneurship. These bootcamps will focus on various aspects of entrepreneurship, such as ideation, product development, business planning, marketing, and fundraising.<br>
-2.	Hackathons: We plan to organize hackathons that will bring together startups, industry experts, and mentors to solve real-world problems and create innovative solutions. These hackathons will provide startups with an opportunity to network, collaborate, and showcase their skills and talents.<br>
-3.	Investor Meetups: We plan to organize investor meetups where startups can pitch their ideas to potential investors and get feedback and advice on their business plans. These meetups will provide startups with an opportunity to learn from experienced investors and to explore funding options for their ventures.<br>
-4.	Expert Talks and Workshops: We plan to invite industry experts and successful entrepreneurs to conduct talks and workshops on various aspects of entrepreneurship, such as building a brand, scaling a business, and managing finances. These talks and workshops will provide startups with valuable insights and practical knowledge to help them succeed in their ventures.<br>
-5.	Demo Days: We plan to organize demo days where startups can showcase their products and services to potential customers, partners, and investors. These demo days will provide startups with an opportunity to get feedback on their products and to explore partnerships and collaborations.<br>
-6.	Mentorship Program: We plan to establish a mentorship program where experienced entrepreneurs and industry experts will provide guidance and advice to our startups. The program will match startups with mentors who have relevant experience and expertise to help them navigate the challenges of entrepreneurship.<br>
-7.	Industry Immersion Program: We plan to organize an industry immersion program where startups can visit successful companies in their respective fields to gain insights into their operations and learn best practices. This program will help startups to identify opportunities and challenges in their industry and to develop strategies for growth.<br>
-8.	Pitching Competitions: We plan to organize pitching competitions where startups can compete to win funding, recognition, and media exposure. These competitions will provide startups with an opportunity to refine their pitch, network with investors, and build their brand.<br>
-9.	Roundtable Discussions: We plan to organize roundtable discussions where startups can meet with experts and peers to discuss specific challenges and opportunities in their industry. These discussions will provide startups with a forum to share knowledge, exchange ideas, and collaborate on solutions.<br>
-10.	Networking Events: We plan to organize networking events where startups can meet with investors, mentors, and other stakeholders in the startup ecosystem. These events will provide startups with an opportunity to build relationships, learn from others, and explore potential partnerships.<br>
-11.	Internship Programs: We plan to establish internship programs where students and recent graduates can gain hands-on experience working with startups in the incubation center. These programs will provide startups with access to talented and motivated interns, and students with an opportunity to develop practical skills and knowledge in entrepreneurship.<br>
+<div class="card-container">
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Entrepreneurship <br> Bootcamps</h1> 
+       <p class="card-info"> We plan to conduct regular bootcamps that will provide startups with an immersive learning experience on entrepreneurship. These bootcamps will focus on various aspects of entrepreneurship, such as ideation, product development, business planning, marketing, and fundraising.</p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Hackathons</h1> 
+       <p class="card-info"> We plan to organize hackathons that will bring together startups, industry experts, and mentors to solve real-world problems and create innovative solutions. These hackathons will provide startups with an opportunity to network, collaborate, and showcase their skills and talents.</p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Investor <br> Meetups</h1> 
+       <p class="card-info"> We plan to organize investor meetups where startups can pitch their ideas to potential investors and get feedback and advice on their business plans. These meetups will provide startups with an opportunity to learn from experienced investors and to explore funding options for their ventures.</p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Expert Talks <br> and Workshops</h1> 
+       <p class="card-info"> We plan to invite industry experts and successful entrepreneurs to conduct talks and workshops on various aspects of entrepreneurship, such as building a brand, scaling a business, and managing finances. These talks and workshops will provide startups with valuable insights and practical knowledge to help them succeed in their ventures. </p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Demo Days</h1> 
+       <p class="card-info"> We plan to organize demo days where startups can showcase their products and services to potential customers, partners, and investors. These demo days will provide startups with an opportunity to get feedback on their products and to explore partnerships and collaborations.</p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Mentorship Program</h1> 
+       <p class="card-info">We plan to establish a mentorship program where experienced entrepreneurs and industry experts will provide guidance and advice to our startups. The program will match startups with mentors who have relevant experience and expertise to help them navigate the challenges of entrepreneurship.</p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Industry Immersion <br> Program</h1> 
+       <p class="card-info"> We plan to organize an industry immersion program where startups can visit successful companies in their respective fields to gain insights into their operations and learn best practices. This program will help startups to identify opportunities and challenges in their industry and to develop strategies for growth.</p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Pitching Competitions</h1> 
+       <p class="card-info"> We plan to organize pitching competitions where startups can compete to win funding, recognition, and media exposure. These competitions will provide startups with an opportunity to refine their pitch, network with investors, and build their brand.</p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Roundtable Discussions</h1> 
+       <p class="card-info">We plan to organize roundtable discussions where startups can meet with experts and peers to discuss specific challenges and opportunities in their industry. These discussions will provide startups with a forum to share knowledge, exchange ideas, and collaborate on solutions. </p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Networking Events</h1> 
+       <p class="card-info">We plan to organize networking events where startups can meet with investors, mentors, and other stakeholders in the startup ecosystem. These events will provide startups with an opportunity to build relationships, learn from others, and explore potential partnerships. </p>
+    </div>
+</div>
+<div class="card">
+    <img src="img.jpg" alt="" class="card-image"> 
+    <div class="card-body">
+        <h1 class="card-title">Internship Programs</h1> 
+       <p class="card-info">We plan to establish internship programs where students and recent graduates can gain hands-on experience working with startups in the incubation center. These programs will provide startups with access to talented and motivated interns, and students with an opportunity to develop practical skills and knowledge in entrepreneurship.</p>
+    </div>
+</div>
+</div>
+
 Overall, our events and programs are designed to promote entrepreneurship and innovation and to provide our startups with the resources, skills, and knowledge they need to succeed. We believe that by organizing these events and programs, we can create a vibrant and supportive startup ecosystem that fosters creativity, collaboration, and innovation.</p>
 
     </section>

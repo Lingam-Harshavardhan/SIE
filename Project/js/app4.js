@@ -95,5 +95,22 @@ dots[slideIndex-1].className += " active";
 setTimeout(showSlidesAuto, 3000); // Change image every 3 seconds
 }
 
+//events
 
+// When a content heading is clicked
+$(".event-content-heading").on("click", function() {
+  // Check if the clicked heading's hidden content is currently visible
+  var hiddenContent = $(this).next(".event-content-hidden");
+  var isVisible = hiddenContent.is(":visible");
+
+  // Hide all other hidden contents
+  $(".event-content-hidden").slideUp();
+
+  // Toggle the visibility of the clicked heading's hidden content
+  if (isVisible) {
+    hiddenContent.slideUp();
+  } else {
+    hiddenContent.slideDown();
+  }
+});
 
