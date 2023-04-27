@@ -176,7 +176,7 @@ h3{
   padding: 50px;
   padding-top:  150px;
   align-items: center;
-  min-height: 100vh; /* Set height to 100% viewport height, adjust as needed */
+  min-height:max-content; /* Set height to 100% viewport height, adjust as needed */
   background-color: #f0f0f0; /* Set background color, replace with desired color */
    
 }
