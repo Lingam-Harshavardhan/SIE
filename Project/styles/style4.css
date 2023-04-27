@@ -469,6 +469,10 @@ margin-bottom: 20px;
     /* Add styles for the content image */
     padding-left:30px;
   }
+  /* drop */
+  .drop{
+    border-radius: 50%;
+  }
 
   /* Event cards */
   .card {
