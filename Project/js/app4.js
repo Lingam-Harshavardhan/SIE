@@ -114,3 +114,16 @@ $(".event-content-heading").on("click", function() {
   }
 });
 
+// Toggle Read More  button for section1
+function toggleReadMode() {
+  var section = document.getElementById("read-mode-section");
+  var btn = document.querySelector(".read-mode-button");
+
+  if (section.style.display === "none") {
+    section.style.display = "block";
+    btn.innerHTML = "Read Less";
+  } else {
+    section.style.display = "none";
+    btn.innerHTML = "Read More";
+  }
+}
